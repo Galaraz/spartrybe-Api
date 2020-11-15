@@ -13,8 +13,8 @@ class CarteiraController{
         }
     }
 
-    // adicionar 
-    //enditar
+    //adicionar 
+    //editar
     //ativarInativar
     //deletarTudo
 }

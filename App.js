@@ -1,27 +1,54 @@
-var express = require('express');
-var app = express();
+"use strict";
+const Express = require("express");
+const Mongoose = require("mongoose");
+const Cors = require("cors");
 
-
+const env = process.NODE_ENV || "development";
+const config = require("./config.json")[env];
 
 //Importação dos modelos
+const Carteira = require("./model/Carteira");
 
-//Configurar o servidor HTTP
+class App {
+  constructor() {
+    this.app;
+  }
 
-//Conexão com o banco de dados MongoDB
+  //Configurar o servidor HTTP
+  init() {
+    //this.app é agora uma instancia do express
+    this.app = Express();
 
-//Instanciando modelos
+    this.app.use(Express.json());
+    this.app.use(Cors());
 
-//Importando as rotas
+    //Conexão com o banco de dados MongoDB
+    Mongoose.connect(
+      `mongodb://${config.db.user}:${config.db.password}@${config.db.url}:${config.db.porta}/${config.db.nome}`,
+      {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+        useFindAndModify: false,
+      }
+    );
 
-//Instanciando as rotas
+    //Instanciando modelos
+    new Carteira();
 
-//Definição da rota raíz
-app.get('/teste', function(req, res){
-    console.log("Recebida requisiçao do teste")
-    res.send("ok");
-  })
+    //Importando as rotas
+    const CarteiraRoute = require("./routes/CarteiraRoute");
+    //Instanciando as rotas
+    new CarteiraRoute(this.app);
+    //Definição da rota raíz
+    this.app.get("/", (req, res) => {
+      res.send("Seja bem vindo!");
+    });
 
-//Listener
-app.listen(3001, function(){
-    console.log('Servidor rodando na porta 3001');
-})
+    //Listener
+    this.app.listen(process.env.PORT || config.port, () => {
+      console.log(`API -Spartrybe rodando na porta ${config.port}`);
+    });
+  }
+}
+
+new App().init();
