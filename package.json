@@ -1,0 +1,29 @@
+{
+  "name": "spartrybe-api",
+  "version": "1.0.0",
+  "description": "Api Orama/spartrybe",
+  "main": "index.js",
+  "scripts": {
+    "start": "node App.js",
+    "dev": "nodemon App.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Galaraz/spartrybe-Api.git"
+  },
+  "keywords": [
+    "api",
+    "carteira"
+  ],
+  "author": "JoaoVictor e equipe spartrybe",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Galaraz/spartrybe-Api/issues"
+  },
+  "homepage": "https://github.com/Galaraz/spartrybe-Api#readme",
+  "dependencies": {
+    "consign": "^0.1.6",
+    "express": "^4.17.1"
+  }
+}
