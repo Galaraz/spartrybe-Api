@@ -1,0 +1,13 @@
+{
+    "development": {
+      "port": 3001,
+      "db": {
+        "nome": "SparTrybe-Api",
+        "url": "nuntemainda",
+        "porta": "33659",
+        "user": "Trybers",
+        "password": "rsrsrsrs"
+      }
+    }
+  }
+  
