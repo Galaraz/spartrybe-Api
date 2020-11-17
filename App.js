@@ -1,4 +1,4 @@
-"use strict";
+ "use strict"; 
 const Express = require("express");
 const Mongoose = require("mongoose");
 const Cors = require("cors");
@@ -6,6 +6,7 @@ const Cors = require("cors");
 const env = process.NODE_ENV || "development";
 const config = require("./config.json")[env];
 
+const GetBanco = "mongodb+srv://hakatrybes:shawee2020@cluster0.dwyaz.mongodb.net/Spar-trybe-DB?retryWrites=true&w=majority";
 //Importação dos modelos
 const Carteira = require("./model/Carteira");
 
@@ -24,7 +25,8 @@ class App {
 
     //Conexão com o banco de dados MongoDB
     Mongoose.connect(
-      `mongodb://${config.db.user}:${config.db.password}@${config.db.url}:${config.db.porta}/${config.db.nome}`,
+      
+      `mongodb+srv://${config.db.user}:${config.db.password}@${config.db.url}/${config.db.nome}?retryWrites=true&w=majority`,
       {
         useNewUrlParser: true,
         useUnifiedTopology: true,

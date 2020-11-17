@@ -6,16 +6,16 @@ class CarteiraRoute {
 
     app
       .route("/carteira")
-      .get(CarteiraRouter.buscarTodos)
-      .post(CarteiraRouter.adicionar)
-      .put(CarteiraRouter.editar)
+      .get(CarteiraController.buscarTodos)
+     /*  .post(CarteiraController.adicionar)
+      .put(CarteiraController.editar) */
          
 
-      app.route("/carteira/ativarInativar").put(CarteiraRouter.ativarInativar);
+     /*  app.route("/carteira/ativarInativar").put(CarteiraRouter.ativarInativar);
 
       app.route("/carteira/esseaquiehsohprateste").delete(CarteiraRouter.deletarTudo);
       app.route("/carteira/buscar").get(CarteiraRouter.buscarTudo);
-      app.route("/carteira/login").post(CarteiraRouter.login);
+      app.route("/carteira/login").post(CarteiraRouter.login); */
           
   }
 }

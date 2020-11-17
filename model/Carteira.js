@@ -22,11 +22,11 @@ class Carteira extends Mongoose.Schema {
       rating: [
         {
          rate: {
-             type:number,
+             type:Number,
              required: true,
          },
          peaple: {
-             type: number,
+             type: Number,
              required: true,
          },
 
@@ -34,24 +34,24 @@ class Carteira extends Mongoose.Schema {
      
       ranking: [{
         position : {
-            type: number,
+            type: Number,
             required: true,
         },
         profitability: [{
             oneMounth:{
-                type: number,
+                type: Number,
                 required: true,
             },
             oneyear: {
-                type: number,
+                type: Number,
                 required: true,
             },
             twoYear: {
-                type: number,
+                type: Number,
                 required: true,
             },
             ytd: {
-                type: number,
+                type: Number,
                 required: true,
             },
         }],
